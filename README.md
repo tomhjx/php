@@ -3,7 +3,7 @@ php cli
 
 # 分支名称
 
-```[os]/[os version]/[php version]```
+```[os]/[os version].[php version]```
 
 e.g. 
 
