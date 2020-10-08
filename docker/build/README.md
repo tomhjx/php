@@ -1,16 +1,3 @@
-# php-cli
-php cli
-
-# 分支名称
-
-```[os][os version]-[php version]```
-
-e.g. 
-
-```centos7-7.4.9```
-
-
-
 # 扩展
 ```bash
 php -m
