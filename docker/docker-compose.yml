@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+  php-cli:
+      images: tomhjx/php-cli:centos7-7.4.9.1
+      privileged: true
+      volumes:
+        - ~/Work:/work
+      cap_add:
+        - ALL
+networks:
+  default:
+    name: lab
