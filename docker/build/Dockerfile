@@ -22,7 +22,7 @@ RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == system
     tar xjf php-${PHP_VERSION}.tar.bz2; \
     cd php-${PHP_VERSION}; \
     echo "Configure PHP..."; \
-    ./configure --prefix=/usr/local/php --enable-opcache --enable-phpdbg --enable-phpdbg-webhelper --with-openssl  --with-zlib --enable-calendar --enable-bcmath --with-bz2 --with-curl --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-gettext --enable-mbstring --disable-mbregex --with-mcrypt --with-mysqli --enable-pcntl --enable-shmop --enable-sockets --enable-sysvsem --enable-shmop --with-mhash --with-mysql-sock --enable-pdo --with-pdo-mysql; \
+    ./configure --prefix=/usr/local/php --enable-opcache --enable-phpdbg --enable-phpdbg-webhelper --with-openssl  --with-zlib --enable-calendar --enable-bcmath --with-bz2 --with-curl --enable-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-gettext --enable-mbstring --disable-mbregex --with-mcrypt --with-mysqli --enable-pcntl --enable-shmop --enable-sockets --enable-sysvsem --enable-shmop --with-mhash --with-mysql-sock --enable-pdo --with-pdo-mysql --with-pear; \
     echo "Compiling PHP..."; \
     make -j${NPROC}; \
     make install;
@@ -55,19 +55,24 @@ RUN set -x; \
     cp lib/libzip.so* /lib64/; \
     /usr/local/php/bin/pecl install zip;
 
-RUN pecl install redis; \
-    pecl install yaconf; \
-    pecl install xdebug;
-
 #install composer
 RUN echo "Install composer..."; \
     curl -sS https://getcomposer.org/installer | /usr/local/php/bin/php;mv composer.phar /usr/local/bin/composer
 
+RUN wget http://phar.phpunit.cn/phpunit-6.5.phar; \
+    chmod +x phpunit-6.5.phar; \
+    mv phpunit-6.5.phar /usr/local/bin/phpunit; \
+    phpunit --version
+
+RUN pecl install redis; \
+    pecl install yaconf; \
+    pecl install xdebug;
+    
 RUN echo "Clean ..."; \
     rm -rf /usr/local/php/etc; \
     echo "Done"; \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
-    mkdir -p /data1/log/php/
+    mkdir -p /data1/log/php/;
 
 COPY etc/php.ini /usr/local/php/lib/php.ini
 
