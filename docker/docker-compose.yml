@@ -1,12 +1,15 @@
 version: '3.5'
 services:
-  php-cli:
+  fpm:
       images: tomhjx/php:fpm.centos7.7.4.9.20201118
-      privileged: true
+      restart: always
       volumes:
         - ~/Work:/work
       cap_add:
         - ALL
+      environment:
+        COMPOSER_PROCESS_TIMEOUT: 3000
+        COMPOSER_MEMORY_LIMIT: -1
 networks:
   default:
     name: lab
