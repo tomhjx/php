@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   fpm:
-      images: tomhjx/php:fpm.centos7.7.4.9.20201118
+      image: tomhjx/php:fpm.centos7.7.4.9.20201118
       restart: always
       volumes:
         - ~/Work:/work
