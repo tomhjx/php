@@ -1,13 +1,13 @@
-# php-cli
-php cli
+# php fpm
+php fpm
 
 # 分支名称
 
-```[os][os version]-[php version]```
+```fpm.[os][os version].[php version]```
 
 e.g. 
 
-```centos7-7.4.9```
+```fpm.centos7.7.4.9```
 
 
 
