@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   php-cli:
-      images: tomhjx/php-cli:centos7-7.4.9.1
+      images: tomhjx/php:fpm.centos7.7.4.9.20201118
       privileged: true
       volumes:
         - ~/Work:/work
