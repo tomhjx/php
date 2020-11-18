@@ -1,13 +1,13 @@
-# php-cli
+# php cli
 php cli
 
 # 分支名称
 
-```[os][os version]-[php version]```
+```cli.[os][os version].[php version]```
 
 e.g. 
 
-```centos7-7.4.9```
+```cli.centos7.7.4.9```
 
 
 
