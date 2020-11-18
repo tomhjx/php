@@ -22,7 +22,7 @@ RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == system
     tar xjf php-${PHP_VERSION}.tar.bz2; \
     cd php-${PHP_VERSION}; \
     echo "Configure PHP..."; \
-    ./configure --prefix=/usr/local/php --enable-opcache --enable-phpdbg --enable-phpdbg-webhelper --with-openssl  --with-zlib --enable-calendar --enable-bcmath --with-bz2 --with-curl --enable-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-gettext --enable-mbstring --disable-mbregex --with-mcrypt --with-mysqli --enable-pcntl --enable-shmop --enable-sockets --enable-sysvsem --enable-shmop --with-mhash --with-mysql-sock --enable-pdo --with-pdo-mysql --with-pear; \
+    ./configure --prefix=/usr/local/php --enable-opcache --enable-phpdbg --enable-phpdbg-webhelper --with-openssl  --with-zlib --enable-calendar --enable-bcmath --with-bz2 --with-curl --enable-gd --with-jpeg --with-freetype --with-gettext --enable-mbstring --disable-mbregex --with-mcrypt --with-mysqli --enable-pcntl --enable-shmop --enable-sockets --enable-sysvsem --enable-shmop --with-mhash --with-mysql-sock --enable-pdo --with-pdo-mysql --with-pear; \
     echo "Compiling PHP..."; \
     make -j${NPROC}; \
     make install;
