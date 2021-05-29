@@ -1,12 +1,13 @@
 version: '3.5'
 services:
-  php-cli:
-      images: tomhjx/php:cli.centos7.7.4.9.20201118
-      privileged: true
-      volumes:
-        - ~/Work:/work
-      cap_add:
-        - ALL
+  cli:
+    image: tomhjx/php:cli.centos7.7.4.9.20201118
+    privileged: true
+    volumes:
+      - ~/Work:/Work
+      - ~/Repos:/Repos
+    cap_add:
+      - ALL
 networks:
   default:
     name: lab
