@@ -4,8 +4,8 @@ services:
     image: tomhjx/php:cli.centos7.7.4.9.20201118
     privileged: true
     volumes:
-      - ~/Work:/Work
-      - ~/Repos:/Repos
+      - ~/Work:/work
+      - ~/Repos:/repos
     cap_add:
       - ALL
 networks:
