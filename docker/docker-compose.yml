@@ -1,7 +1,8 @@
 version: '3.5'
 services:
   cli:
-    image: tomhjx/php:cli.centos7.7.4.9.20201118
+    # image: tomhjx/php:cli.centos7.7.4.9.20201118
+    build: ./build
     privileged: true
     volumes:
       - ~/Work:/work

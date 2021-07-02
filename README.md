@@ -9,8 +9,6 @@ e.g.
 
 ```cli.centos7.7.4.9```
 
-
-
 # 扩展
 ```bash
 php -m
@@ -60,6 +58,7 @@ tokenizer
 xml
 xmlreader
 xmlwriter
+yaconf
 Zend OPcache
 zip
 zlib
